@@ -1,0 +1,1236 @@
+fileFormatVersion: 2
+guid: 51b25e51af0a16d4893d0d059233973c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7145348007284675356
+    second: cat-walking_0
+  - first:
+      213: 1497855200657998563
+    second: cat-walking_1
+  - first:
+      213: 3565353289797086214
+    second: cat-walking_2
+  - first:
+      213: 5433788564355450185
+    second: cat-walking_3
+  - first:
+      213: 3741237362609179912
+    second: cat-walking_4
+  - first:
+      213: 1030964278088183052
+    second: cat-walking_5
+  - first:
+      213: 5926710322133682715
+    second: cat-walking_6
+  - first:
+      213: -1574117706231334959
+    second: cat-walking_7
+  - first:
+      213: -5486189470147534568
+    second: cat-walking_8
+  - first:
+      213: -6613496198841695140
+    second: cat-walking_9
+  - first:
+      213: 4529189367135810649
+    second: cat-walking_10
+  - first:
+      213: -2976647771000128723
+    second: cat-walking_11
+  - first:
+      213: -3332035469012596099
+    second: cat-walking_12
+  - first:
+      213: -5593089480245923251
+    second: cat-walking_13
+  - first:
+      213: 2562519158165046884
+    second: cat-walking_14
+  - first:
+      213: 9037635135357286962
+    second: cat-walking_15
+  - first:
+      213: 8329225734785630072
+    second: cat-walking_16
+  - first:
+      213: 8050778715830403258
+    second: cat-walking_17
+  - first:
+      213: 7083929807963647740
+    second: cat-walking_18
+  - first:
+      213: -2421988136980766608
+    second: cat-walking_19
+  - first:
+      213: -672132002859002468
+    second: cat-walking_20
+  - first:
+      213: -3469749471036653161
+    second: cat-walking_21
+  - first:
+      213: -90288995648533649
+    second: cat-walking_22
+  - first:
+      213: -4536732660510682329
+    second: cat-walking_23
+  - first:
+      213: -1281910097059094753
+    second: cat-walking_24
+  - first:
+      213: 6871455184609879804
+    second: cat-walking_25
+  - first:
+      213: 4236682455786045500
+    second: cat-walking_26
+  - first:
+      213: -1542546975691293791
+    second: cat-walking_27
+  - first:
+      213: 8148820213209267031
+    second: cat-walking_28
+  - first:
+      213: -8643832639554752035
+    second: cat-walking_29
+  - first:
+      213: 4326930708373795461
+    second: cat-walking_30
+  - first:
+      213: -2611049317315720176
+    second: cat-walking_31
+  - first:
+      213: -159916505668605690
+    second: cat-walking_32
+  - first:
+      213: -2888093924610987892
+    second: cat-walking_33
+  - first:
+      213: 8396337534686781595
+    second: cat-walking_34
+  - first:
+      213: 1129575850067066250
+    second: cat-walking_35
+  - first:
+      213: 6091739982779171442
+    second: cat-walking_36
+  - first:
+      213: 8271942417845416753
+    second: cat-walking_37
+  - first:
+      213: -556174308933819768
+    second: cat-walking_38
+  - first:
+      213: 5772764076851246624
+    second: cat-walking_39
+  - first:
+      213: -7458936406905628420
+    second: cat-walking_40
+  - first:
+      213: 6193484130450467792
+    second: cat-walking_41
+  - first:
+      213: 7831612916053448436
+    second: cat-walking_42
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 2406
+        width: 351
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c139fbaa720692360800000000000000
+      internalID: 7145348007284675356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 21
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 2402
+        width: 357
+        height: 184
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e201387e5379c410800000000000000
+      internalID: 1497855200657998563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 31
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 2403
+        width: 371
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60c20215dedaa7130800000000000000
+      internalID: 3565353289797086214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 50
+      rect:
+        serializedVersion: 2
+        x: 1217
+        y: 2408
+        width: 362
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9458cfae8e1b86b40800000000000000
+      internalID: 5433788564355450185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 2210
+        width: 368
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80d4db23f8b8be330800000000000000
+      internalID: 3741237362609179912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 22
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 2200
+        width: 340
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0d20937c88be4e00800000000000000
+      internalID: 1030964278088183052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 2206
+        width: 361
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1a4b6d03a7ef3250800000000000000
+      internalID: 5926710322133682715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-walking_7
+      rect:
+        serializedVersion: 2
+        x: 1217
+        y: 2207
+        width: 362
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d7bd65494c972ae0800000000000000
+      internalID: -1574117706231334959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 2006
+        width: 349
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8112e557eb32dd3b0800000000000000
+      internalID: -5486189470147534568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 23
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 2003
+        width: 342
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5405a83f342834a0800000000000000
+      internalID: -6613496198841695140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 33
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 2015
+        width: 359
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9543b949bb9eade30800000000000000
+      internalID: 4529189367135810649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-walking_11
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 2007
+        width: 367
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2b341c8f92d0b6d0800000000000000
+      internalID: -2976647771000128723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 1807
+        width: 340
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7a8082156b32c1d0800000000000000
+      internalID: -3332035469012596099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 24
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 1802
+        width: 336
+        height: 184
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d42b7fc40ca5162b0800000000000000
+      internalID: -5593089480245923251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 34
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 1809
+        width: 340
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4668f88f895ef8320800000000000000
+      internalID: 2562519158165046884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-walking_15
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 1810
+        width: 362
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23a7f8ca5412c6d70800000000000000
+      internalID: 9037635135357286962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1611
+        width: 344
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87f70f7fcaa579370800000000000000
+      internalID: 8329225734785630072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 25
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 1594
+        width: 324
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab0c852569c1abf60800000000000000
+      internalID: 8050778715830403258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 35
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 1609
+        width: 335
+        height: 163
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfe6979c0ac2f4260800000000000000
+      internalID: 7083929807963647740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-walking_19
+      rect:
+        serializedVersion: 2
+        x: 1217
+        y: 1611
+        width: 358
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0702d052f9e536ed0800000000000000
+      internalID: -2421988136980766608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 5
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1410
+        width: 353
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c95da67218b1ca6f0800000000000000
+      internalID: -672132002859002468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 26
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 1398
+        width: 266
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 791c2475d39f8dfc0800000000000000
+      internalID: -3469749471036653161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 36
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 1407
+        width: 355
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6b0e3703aa3fbef0800000000000000
+      internalID: -90288995648533649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-walking_23
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 1411
+        width: 351
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72319519ea94a01c0800000000000000
+      internalID: -4536732660510682329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 6
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1213
+        width: 362
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1f5ecefe8db53ee0800000000000000
+      internalID: -1281910097059094753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 37
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 1206
+        width: 356
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf620b875105c5f50800000000000000
+      internalID: 6871455184609879804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-walking_26
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 1214
+        width: 323
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c30c1432f38bbca30800000000000000
+      internalID: 4236682455786045500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 1013
+        width: 357
+        height: 163
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ab3198c2b5c79ae0800000000000000
+      internalID: -1542546975691293791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 38
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 1009
+        width: 374
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75b7cd24fcc661170800000000000000
+      internalID: 8148820213209267031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-walking_29
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 1010
+        width: 318
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd17965e200fa0880800000000000000
+      internalID: -8643832639554752035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 809
+        width: 360
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5827950ed885c0c30800000000000000
+      internalID: 4326930708373795461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 39
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 812
+        width: 364
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01cce56da70b3cbd0800000000000000
+      internalID: -2611049317315720176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-walking_32
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 813
+        width: 326
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 609a6ed09ccd7cdf0800000000000000
+      internalID: -159916505668605690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 613
+        width: 362
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c88299990ed6be7d0800000000000000
+      internalID: -2888093924610987892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 40
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 614
+        width: 346
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b90e8498088c58470800000000000000
+      internalID: 8396337534686781595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-walking_35
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 614
+        width: 331
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8d7b1a304f0daf00800000000000000
+      internalID: 1129575850067066250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 10
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 415
+        width: 354
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 272c8992d353a8450800000000000000
+      internalID: 6091739982779171442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 41
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 418
+        width: 329
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 133792a6dc7dbc270800000000000000
+      internalID: 8271942417845416753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-walking_38
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 415
+        width: 334
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8822dcaa9621848f0800000000000000
+      internalID: -556174308933819768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 11
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 218
+        width: 354
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 026badca75afc1050800000000000000
+      internalID: 5772764076851246624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 42
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 211
+        width: 351
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf859286bd88c7890800000000000000
+      internalID: -7458936406905628420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-walking_41
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 213
+        width: 330
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dbe48d800da3f550800000000000000
+      internalID: 6193484130450467792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-walking_42
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 13
+        width: 381
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f61ab7147a7fac60800000000000000
+      internalID: 7831612916053448436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: e4f8b568ac321c949bbf19eefefe236e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      0: 7145348007284675356
+      1: 3741237362609179912
+      10: 6091739982779171442
+      11: 5772764076851246624
+      2: -5486189470147534568
+      21: 1497855200657998563
+      22: 1030964278088183052
+      23: -6613496198841695140
+      24: -5593089480245923251
+      25: 8050778715830403258
+      26: -3469749471036653161
+      3: -3332035469012596099
+      31: 3565353289797086214
+      32: 5926710322133682715
+      33: 4529189367135810649
+      34: 2562519158165046884
+      35: 7083929807963647740
+      36: -90288995648533649
+      37: 6871455184609879804
+      38: 8148820213209267031
+      39: -2611049317315720176
+      4: 8329225734785630072
+      40: 8396337534686781595
+      41: 8271942417845416753
+      42: -7458936406905628420
+      5: -672132002859002468
+      50: 5433788564355450185
+      6: -1281910097059094753
+      7: -1542546975691293791
+      8: 4326930708373795461
+      9: -2888093924610987892
+      cat-walking6: -1281910097059094753
+      cat-walking_11: -2976647771000128723
+      cat-walking_15: 9037635135357286962
+      cat-walking_19: -2421988136980766608
+      cat-walking_23: -4536732660510682329
+      cat-walking_26: 4236682455786045500
+      cat-walking_29: -8643832639554752035
+      cat-walking_32: -159916505668605690
+      cat-walking_35: 1129575850067066250
+      cat-walking_38: -556174308933819768
+      cat-walking_41: 6193484130450467792
+      cat-walking_42: 7831612916053448436
+      cat-walking_7: -1574117706231334959
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
