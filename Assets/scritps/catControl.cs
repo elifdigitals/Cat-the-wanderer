@@ -5,6 +5,7 @@ public class CatControl : MonoBehaviour
     [Header("Movement Settings")]
     public float moveSpeed = 5f;    // скорость движения по X (5f — см. ниже про 'f')
     public float jumpForce = 10f;   // импульс прыжка по Y (10f — float literal)
+    public float jumpAmount = 2;
 
     [Header("Ground Check")]
     public Transform groundCheck;      // пустой объект, расположенный у ног персонажа
@@ -16,6 +17,7 @@ public class CatControl : MonoBehaviour
     private bool isGrounded;      // флаг — стоим ли на земле
     private float moveInput;      // ввод игрока по горизонтали (-1,0,1)
     private Animator anim;
+    private float jumpsLeft;
 
     void Start()
     {
@@ -23,6 +25,7 @@ public class CatControl : MonoBehaviour
         // <> здесь — это синтаксис обобщённого метода (GetComponent<T>()), подробнее ниже.
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        jumpsLeft = jumpAmount;
 
         // Рекомендуется зафиксировать вращение, чтобы физика не "крутила" спрайт при столкновениях.
         // Это эквивалентно в инспекторе поставить Constraints -> Freeze Rotation Z.
@@ -37,11 +40,14 @@ public class CatControl : MonoBehaviour
 
         // Прыжок: если игрок нажал кнопку "Jump" (обычно пробел) и мы стоим на земле — прыгаем.
         // Input.GetButtonDown срабатывает в кадр нажатия.
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        // if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && jumpsLeft > 1)
         {
             // Устанавливаем вертикальную скорость напрямую.
             // rb.velocity — это Vector2 (структура). Мы задаём новую Vector2 с прежней скоростью по X.
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            jumpsLeft--;
+            // Debug.Log(jumpsLeft);
             // anim.Play("jump");
         }
     }
@@ -63,19 +69,25 @@ public class CatControl : MonoBehaviour
         else if (moveInput < 0f)
             transform.localScale = new Vector3(1f, 1f, 1f);   // смотрим влево
 
-        if (!isGrounded) 
+        if (isGrounded)
         {
-            anim.Play("jump"); // если в воздухе → Jump
+            jumpsLeft = jumpAmount;
+            // Debug.Log(jumpsLeft);
         }
-        else if (Mathf.Abs(moveInput) > 0.01f) 
-        {
-            anim.Play("walkingCat"); // если двигаемся → Run
-        }
-        else 
-        {
-            anim.Play("stay", 0, 0f); 
-            // сбрасываем Idle в начало (0-й кадр)
-        }
+
+        if (!isGrounded)
+            {
+                anim.Play("jump"); // если в воздухе → Jump
+            }
+            else if (Mathf.Abs(moveInput) > 0.01f)
+            {
+                anim.Play("walkingCat"); // если двигаемся → Run
+            }
+            else
+            {
+                anim.Play("stay", 0, 0f);
+                // сбрасываем Idle в начало (0-й кадр)
+            }
     }
 
     // В редакторе рисуем кружок проверки земли, чтобы было удобно настраивать groundRadius.
