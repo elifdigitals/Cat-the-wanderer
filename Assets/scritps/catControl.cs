@@ -41,7 +41,7 @@ public class CatControl : MonoBehaviour
         // Прыжок: если игрок нажал кнопку "Jump" (обычно пробел) и мы стоим на земле — прыгаем.
         // Input.GetButtonDown срабатывает в кадр нажатия.
         // if (Input.GetButtonDown("Jump") && isGrounded)
-        if (Input.GetKeyDown(KeyCode.J) && jumpsLeft > 1)
+        if (Input.GetKeyDown(KeyCode.K) && jumpsLeft > 1)
         {
             // Устанавливаем вертикальную скорость напрямую.
             // rb.velocity — это Vector2 (структура). Мы задаём новую Vector2 с прежней скоростью по X.
@@ -76,16 +76,18 @@ public class CatControl : MonoBehaviour
         }
 
         if (!isGrounded)
-            {
-                anim.Play("jump"); // если в воздухе → Jump
+        {
+                // anim.Play("jump"); // если в воздухе → Jump
+                anim.Play("jumpV2");
             }
             else if (Mathf.Abs(moveInput) > 0.01f)
             {
                 anim.Play("walkingCat"); // если двигаемся → Run
             }
             else
-            {
-                anim.Play("stay", 0, 0f);
+        {
+                // anim.Play("stay", 0, 0f);
+                anim.Play("stayV2");
                 // сбрасываем Idle в начало (0-й кадр)
             }
     }
