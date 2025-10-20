@@ -329,7 +329,7 @@ MonoBehaviour:
   groundRadius: 0.2
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
 --- !u!1 &154062172
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,7 +939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraToCat
   target: {fileID: 55438523}
-  smoothSpeed: 0.005
+  smoothSpeed: 0.03
   offset: {x: 0, y: 0, z: -10}
 --- !u!1 &619394800
 GameObject:
