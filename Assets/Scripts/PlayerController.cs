@@ -5,11 +5,8 @@ using UnityEngine.InputSystem; // новый ввод
 [RequireComponent(typeof(SpriteRenderer))]
 public class PlayerController2D : MonoBehaviour
 {
-    [Header("Move")]
-    public float moveSpeed = 8f;
-    public float acceleration = 15f;
-    public float deceleration = 20f;
-    public float airControlMultiplier = 0.6f;
+    [Header("Move (instant)")]
+    public float moveSpeed = 8f;           // мгновенная скорость по X, без ускорения
 
     [Header("Jump")]
     public float jumpForce = 13f;
@@ -23,10 +20,12 @@ public class PlayerController2D : MonoBehaviour
     public LayerMask groundMask;
 
     [Header("Sprites")]
-    public Sprite idleSprite;   // 1. стойка
-    public Sprite walkASprite;  // 2. шаг левая
-    public Sprite walkBSprite;  // 3. шаг правая
-    public Sprite attackSprite; // 4. атака
+    public Sprite stand;     // стойка
+    public Sprite moving1;   // кадр 1
+    public Sprite moving2;   // кадр 2
+    public Sprite moving3;   // кадр 3
+    public Sprite moving4;   // кадр 4
+    public Sprite attackSprite; // атака (приоритетно)
 
     [Header("Sprite Animation")]
     [Tooltip("Скорость переключения кадров шага (кадров/сек).")]
@@ -44,14 +43,19 @@ public class PlayerController2D : MonoBehaviour
 
     // таймеры/флаги спрайтов
     float walkTimer;
-    bool useWalkA = true;
     bool isAttacking;
     float attackTimer;
 
-    // Input Actions
+    // управление входом
     InputAction moveAction;
     InputAction jumpAction;
     InputAction attackAction;
+
+    // последовательность кадров ходьбы (см. задание)
+    // 1,2,3,2,1,4,3,2,1 ... (зациклено)
+    readonly int[] walkSeq = new int[] { 1, 2, 3, 2, 1, 4, 3, 2, 1 };
+    int walkIndex = 0;          // текущая позиция в последовательности
+    bool wasMovingLastFrame;    // чтобы правильно стартовать с moving1
 
     void Awake()
     {
@@ -75,7 +79,7 @@ public class PlayerController2D : MonoBehaviour
         attackAction.AddBinding("<Gamepad>/buttonWest");
         attackAction.AddBinding("<Gamepad>/rightShoulder");
 
-        if (idleSprite != null) sr.sprite = idleSprite;
+        if (stand != null) sr.sprite = stand;
     }
 
     void OnEnable()
@@ -148,43 +152,55 @@ public class PlayerController2D : MonoBehaviour
         // === Спрайты: ходьба/стойка ===
         float moveAbs = Mathf.Abs(xInput);
 
-        // направление (как у тебя — через scale)
+        // направление (разворот через scale)
         if (moveAbs > 0.01f)
             transform.localScale = new Vector3(xInput > 0 ? 1 : -1, 1, 1);
 
-        if (moveAbs > 0.01f)
+        // если начали движение в этом кадре — стартуем строго с moving1
+        bool isMovingNow = moveAbs > 0.01f;
+        if (isMovingNow && !wasMovingLastFrame)
         {
-            // Переключаем кадры шага 2↔3 с частотой walkFps
+            walkIndex = 0;       // индекс указывает на 'moving1' в последовательности (значение 1)
+            walkTimer = 0f;
+            SetWalkSpriteBySeqIndex(walkIndex);
+        }
+        wasMovingLastFrame = isMovingNow;
+
+        if (isMovingNow)
+        {
+            // Переключаем кадры шага по кастомной последовательности
             walkTimer += Time.deltaTime;
             float frameTime = 1f / Mathf.Max(1f, walkFps);
             if (walkTimer >= frameTime)
             {
                 walkTimer -= frameTime;
-                useWalkA = !useWalkA;
+                walkIndex = (walkIndex + 1) % walkSeq.Length;
+                SetWalkSpriteBySeqIndex(walkIndex);
             }
-            if (useWalkA && walkASprite != null) sr.sprite = walkASprite;
-            else if (!useWalkA && walkBSprite != null) sr.sprite = walkBSprite;
         }
         else
         {
-            // Стоим
-            if (idleSprite != null) sr.sprite = idleSprite;
+            // Мгновенная остановка — стойка
+            if (stand != null) sr.sprite = stand;
             walkTimer = 0f;
-            useWalkA = true;
+            walkIndex = 0;
         }
     }
 
     void FixedUpdate()
     {
-        bool grounded = Physics2D.OverlapCircle(feet.position, groundRadius, groundMask);
+        // === Мгновенное управление скоростью по X ===
+        float moveAbs = Mathf.Abs(xInput);
 
-        float desired = xInput * moveSpeed;
-        float accel = Mathf.Abs(desired) > 0.01f
-            ? (grounded ? acceleration : acceleration * airControlMultiplier)
-            : (grounded ? deceleration : deceleration * 0.5f);
-
-        float newX = Mathf.MoveTowards(rb.velocity.x, desired, accel * Time.fixedDeltaTime);
-        rb.velocity = new Vector2(newX, rb.velocity.y);
+        if (moveAbs > 0.01f)
+        {
+            rb.velocity = new Vector2(moveSpeed * Mathf.Sign(xInput), rb.velocity.y);
+        }
+        else
+        {
+            // сразу «встань на месте»: обнуляем X-скорость
+            rb.velocity = new Vector2(0f, rb.velocity.y);
+        }
     }
 
     void DoJump()
@@ -194,6 +210,19 @@ public class PlayerController2D : MonoBehaviour
 
         bool grounded = Physics2D.OverlapCircle(feet.position, groundRadius, groundMask);
         if (!grounded && airJumpsLeft > 0) airJumpsLeft--;
+    }
+
+    void SetWalkSpriteBySeqIndex(int idx)
+    {
+        int frame = walkSeq[idx];
+        switch (frame)
+        {
+            case 1: if (moving1 != null) sr.sprite = moving1; break;
+            case 2: if (moving2 != null) sr.sprite = moving2; break;
+            case 3: if (moving3 != null) sr.sprite = moving3; break;
+            case 4: if (moving4 != null) sr.sprite = moving4; break;
+            default: if (moving1 != null) sr.sprite = moving1; break;
+        }
     }
 
     void OnDrawGizmosSelected()
