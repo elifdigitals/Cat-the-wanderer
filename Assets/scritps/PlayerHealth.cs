@@ -7,15 +7,20 @@ public class PlayerHealth : MonoBehaviour
     public int maxHp = 3;
     public float knockbackByHit = 50f;
     public Transform spawnPoint;
+    public float invulnerabilityTime = 1.0f; // 1 секунда неуязвимости
+    public float flashInterval = 0.1f;      // мигание каждые 0.1 сек
 
+    private bool isInvulnerable = false;
     private Rigidbody2D rb;
     private Animator anim;
     private float defaultGravityScale;
+    private SpriteRenderer sr;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
         defaultGravityScale = rb.gravityScale;
         if (spawnPoint != null)
         {
@@ -24,12 +29,17 @@ public class PlayerHealth : MonoBehaviour
     }
     public void ApplyDamage(int amount)
     {
+        if (isInvulnerable) return;
         hp -= amount;
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, knockbackByHit);
         if (hp <= 0)
         {
             GetComponent<CatControl>().enabled = false;
             Die();
+        }
+        else
+        {
+            StartCoroutine(InvulnerabilityRoutine());
         }
     }
 
@@ -41,8 +51,8 @@ public class PlayerHealth : MonoBehaviour
     IEnumerator KnockbackRoutine()
     {
 
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 30f);
-        yield return new WaitForSeconds(0.5f);
+        rb.linearVelocity = new Vector2(0, 20f);
+        yield return new WaitForSeconds(0.3f);
         rb.gravityScale = 0f;
         rb.linearVelocity = Vector2.zero;
         anim.Play("jumpV2");
@@ -61,5 +71,21 @@ public class PlayerHealth : MonoBehaviour
         hp = maxHp;
         rb.gravityScale = defaultGravityScale;
         GetComponent<CatControl>().enabled = true;
+    }
+    IEnumerator InvulnerabilityRoutine()
+    {
+        isInvulnerable = true;
+
+        float timer = 0f;
+        while (timer < invulnerabilityTime)
+        {
+            // мигание спрайта
+            sr.enabled = !sr.enabled;
+            yield return new WaitForSeconds(flashInterval);
+            timer += flashInterval;
+        }
+
+        sr.enabled = true; // вернуть спрайт
+        isInvulnerable = false;
     }
 }
