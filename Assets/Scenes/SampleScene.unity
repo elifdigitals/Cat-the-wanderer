@@ -972,7 +972,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraToCat
   target: {fileID: 55438523}
-  smoothSpeed: 0.03
+  smoothSpeed: 0.05
   offset: {x: 0, y: 0, z: -10}
 --- !u!1 &619394800
 GameObject:
