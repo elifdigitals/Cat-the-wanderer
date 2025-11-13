@@ -364,7 +364,7 @@ GameObject:
   - component: {fileID: 154062175}
   - component: {fileID: 154062174}
   - component: {fileID: 154062173}
-  - component: {fileID: 154062179}
+  - component: {fileID: 154062181}
   - component: {fileID: 154062180}
   m_Layer: 8
   m_Name: Red_slime_first_enemy_0
@@ -583,19 +583,6 @@ Transform:
   - {fileID: 515094370}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &154062179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 154062172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4e871cdd9cae544cbf0f06544a8c240, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyHit
-  damage: 1
 --- !u!114 &154062180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,10 +597,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   hp: 15
   maxHp: 15
-  knockbackByHit: 0
+  respTime: 10
+  knockbackByHit: 1
   spawnPoint: {fileID: 515094370}
-  invulnerabilityTime: 0
+  invulnerabilityTime: 1
   flashInterval: 0.1
+--- !u!114 &154062181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154062172}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e871cdd9cae544cbf0f06544a8c240, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHit
+  damage: 1
 --- !u!1001 &246251972
 PrefabInstance:
   m_ObjectHideFlags: 0
