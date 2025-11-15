@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     public int respTime = 10;
     public float knockbackByHit = 1f;
     public Transform spawnPoint;
+    public GameObject hitboxObject;
     public float invulnerabilityTime = 1f; // 1 секунда неуязвимости
     public float flashInterval = 0.1f;      // мигание каждые 0.1 сек
 
@@ -57,6 +58,7 @@ public class EnemyHealth : MonoBehaviour
         // yield return new WaitForSeconds(0.3f);
         rb.gravityScale = 0f;
         rb.linearVelocity = Vector2.zero;
+        hitboxObject.layer = LayerMask.NameToLayer("Enemy");
         sr.enabled = false;
         // anim.Play("jumpV2");
         // for (int i = 0; i < 6; i++)
@@ -77,6 +79,7 @@ public class EnemyHealth : MonoBehaviour
         rb.gravityScale = defaultGravityScale;
         GetComponent<EnemyHit>().enabled = true;
         isInvulnerable = false;
+        hitboxObject.layer = LayerMask.NameToLayer("EnemyBox");
     }
     IEnumerator InvulnerabilityRoutine()
     {

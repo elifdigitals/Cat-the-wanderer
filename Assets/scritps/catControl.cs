@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class CatControl : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class CatControl : MonoBehaviour
     public float moveSpeed = 5f;    // скорость движения по X (5f — см. ниже про 'f')
     public float jumpForce = 10f;   // импульс прыжка по Y (10f — float literal)
     public float jumpAmount = 2;
+    public GameObject HitChild;
 
     [Header("Ground Check")]
     public Transform groundCheck;      // пустой объект, расположенный у ног персонажа
@@ -49,6 +51,10 @@ public class CatControl : MonoBehaviour
             jumpsLeft--;
             // Debug.Log(jumpsLeft);
             // anim.Play("jump");
+        }
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            StartCoroutine(FlashOneFrame());
         }
     }
 
@@ -98,5 +104,12 @@ public class CatControl : MonoBehaviour
         if (groundCheck == null) return;
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
+    }
+
+    IEnumerator FlashOneFrame()
+    {
+        HitChild.SetActive(true);   // включили
+        yield return new WaitForSeconds(0.1f);
+        HitChild.SetActive(false);  // выключили
     }
 }
