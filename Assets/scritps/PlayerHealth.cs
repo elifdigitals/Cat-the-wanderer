@@ -10,6 +10,9 @@ public class PlayerHealth : MonoBehaviour
     public float invulnerabilityTime = 1.0f; // 1 секунда неуязвимости
     public float flashInterval = 0.1f;      // мигание каждые 0.1 сек
 
+    // <-- Новая переменная: перетащите сюда коллайдер death zone (Is Trigger = true)
+    public Collider2D deathZoneCollider;
+
     private bool isInvulnerable = false;
     private Rigidbody2D rb;
     private Animator anim;
@@ -27,11 +30,12 @@ public class PlayerHealth : MonoBehaviour
             transform.position = spawnPoint.position;
         }
     }
+
     public void ApplyDamage(int amount)
     {
         if (isInvulnerable) return;
         hp -= amount;
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, knockbackByHit);
+        rb.velocity = new Vector2(rb.velocity.x, knockbackByHit);
         if (hp <= 0)
         {
             GetComponent<CatControl>().enabled = false;
@@ -43,27 +47,27 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    void Die()
+    // Сделано public — можно вызывать извне
+    public void Die()
     {
         StartCoroutine(KnockbackRoutine());
     }
 
     IEnumerator KnockbackRoutine()
     {
-
-        rb.linearVelocity = new Vector2(0, 20f);
+        rb.velocity = new Vector2(0, 20f);
         yield return new WaitForSeconds(0.3f);
         rb.gravityScale = 0f;
-        rb.linearVelocity = Vector2.zero;
-        anim.Play("jumpV2");
+        rb.velocity = Vector2.zero;
+        if (anim != null) anim.Play("jumpV2");
         for (int i = 0; i < 6; i++)
         {
-            rb.linearVelocity = new Vector2(-30f, 0);
+            rb.velocity = new Vector2(-30f, 0);
             yield return new WaitForSeconds(0.1f);
-            rb.linearVelocity = new Vector2(30f, 0);
+            rb.velocity = new Vector2(30f, 0);
             yield return new WaitForSeconds(0.1f);
         }
-        rb.linearVelocity = new Vector2(0, 0);
+        rb.velocity = Vector2.zero;
         if (spawnPoint != null)
         {
             transform.position = spawnPoint.position;
@@ -72,6 +76,7 @@ public class PlayerHealth : MonoBehaviour
         rb.gravityScale = defaultGravityScale;
         GetComponent<CatControl>().enabled = true;
     }
+
     IEnumerator InvulnerabilityRoutine()
     {
         isInvulnerable = true;
@@ -87,5 +92,44 @@ public class PlayerHealth : MonoBehaviour
 
         sr.enabled = true; // вернуть спрайт
         isInvulnerable = false;
+    }
+
+    // --- Новая логика: быстрый респон при столкновении с death zone ---
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // если deathZoneCollider назначен и попали в него — мгновенный респаун
+        if (deathZoneCollider != null && other == deathZoneCollider)
+        {
+            InstantRespawn();
+        }
+    }
+
+    /// <summary>
+    /// Мгновенно телепортирует игрока на spawnPoint, обнуляет скорость и восстанавливает hp.
+    /// </summary>
+    public void InstantRespawn()
+    {
+        // остановим все текущие корутины (например, мигание/анимации)
+        StopAllCoroutines();
+
+        // вернуть положение
+        if (spawnPoint != null)
+        {
+            transform.position = spawnPoint.position;
+        }
+
+        // сброс физики
+        rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+        rb.gravityScale = defaultGravityScale;
+
+        // восстановление здоровья и состояний
+        hp = maxHp;
+        isInvulnerable = false;
+        if (sr != null) sr.enabled = true;
+
+        // включаем управление игроком (если было выключено)
+        var control = GetComponent<CatControl>();
+        if (control != null) control.enabled = true;
     }
 }
