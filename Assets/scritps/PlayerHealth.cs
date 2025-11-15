@@ -76,6 +76,14 @@ public class PlayerHealth : MonoBehaviour
         rb.gravityScale = defaultGravityScale;
         GetComponent<CatControl>().enabled = true;
     }
+    public void SetInvulnerable(bool value)
+    {
+        isInvulnerable = value;
+    }
+    public bool IsInvulnerable()
+    {
+        return isInvulnerable;
+    }
 
     IEnumerator InvulnerabilityRoutine()
     {
