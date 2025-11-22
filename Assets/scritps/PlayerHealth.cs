@@ -35,7 +35,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (isInvulnerable) return;
         hp -= amount;
-        rb.velocity = new Vector2(rb.velocity.x, knockbackByHit);
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, knockbackByHit);
         if (hp <= 0)
         {
             GetComponent<CatControl>().enabled = false;
@@ -55,19 +55,19 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator KnockbackRoutine()
     {
-        rb.velocity = new Vector2(0, 20f);
+        rb.linearVelocity = new Vector2(0, 20f);
         yield return new WaitForSeconds(0.3f);
         rb.gravityScale = 0f;
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
         if (anim != null) anim.Play("jumpV2");
         for (int i = 0; i < 6; i++)
         {
-            rb.velocity = new Vector2(-30f, 0);
+            rb.linearVelocity = new Vector2(-30f, 0);
             yield return new WaitForSeconds(0.1f);
-            rb.velocity = new Vector2(30f, 0);
+            rb.linearVelocity = new Vector2(30f, 0);
             yield return new WaitForSeconds(0.1f);
         }
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
         if (spawnPoint != null)
         {
             transform.position = spawnPoint.position;
@@ -127,7 +127,7 @@ public class PlayerHealth : MonoBehaviour
         }
 
         // сброс физики
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
         rb.angularVelocity = 0f;
         rb.gravityScale = defaultGravityScale;
 

@@ -4,6 +4,8 @@ using System.Collections;
 
 public class CatControl : MonoBehaviour
 {
+    private PlatformDetector platformDetector;
+
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
@@ -56,6 +58,16 @@ public class CatControl : MonoBehaviour
         jumpsLeft = jumpAmount;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
+        // Попытка достать PlatformDetector (если он добавлен на тот же объект)
+        platformDetector = GetComponent<PlatformDetector>();
+        // если не на том же объекте, попробуем найти в родителях/дочерних, это безопасно:
+        if (platformDetector == null)
+        {
+            platformDetector = GetComponentInChildren<PlatformDetector>();
+            if (platformDetector == null)
+                platformDetector = GetComponentInParent<PlatformDetector>();
+        }
+
         if (maxDashes <= 0) maxDashes = 1;
         slotUsed = new bool[maxDashes];
         slotEndTime = new float[maxDashes];
@@ -95,15 +107,24 @@ public class CatControl : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
 
+        // Получаем скорость платформы (если есть)
+        Vector2 platVel = Vector2.zero;
+        if (platformDetector != null)
+            platVel = platformDetector.platformVelocity;
+
+        // ВАЖНО: не трогаем логику dash — если isDashing == true, оставляем dash контролировать rb
         if (!isDashing)
         {
-            rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+            // Если игрок стоит на платформе (platVel.x != 0) — добавляем её горизонтальную скорость
+            float targetVelX = moveInput * moveSpeed + platVel.x;
+            rb.linearVelocity = new Vector2(targetVelX, rb.linearVelocity.y);
 
             if (moveInput > 0f)
                 transform.localScale = new Vector3(-1f, 1f, 1f);
             else if (moveInput < 0f)
                 transform.localScale = new Vector3(1f, 1f, 1f);
         }
+        // else: dash управляет rb, поэтому не вмешиваемся
 
         if (isGrounded)
         {
@@ -143,7 +164,6 @@ public class CatControl : MonoBehaviour
         UpdateDashUI();
 
         // СТЕГГЕР: слегка сдвинуть остальные активные слоты, чтобы не совпали по времени.
-        // Это предотвращает одновременное восстановление нескольких зарядов.
         for (int i = 0; i < slotUsed.Length; i++)
         {
             if (i == useIndex) continue;
@@ -154,11 +174,12 @@ public class CatControl : MonoBehaviour
             }
         }
 
-        // запускаем даш
+        // запускаем даш (никто не трогал этот блок)
         if (dashCoroutine != null) StopCoroutine(dashCoroutine);
         dashCoroutine = StartCoroutine(DoDash());
     }
 
+    // --- НЕ ТРОГАЛ: DoDash, CheckRefills, UpdateDashUI (оставлены как в твоём коде) ---
     private IEnumerator DoDash()
     {
         isDashing = true;
