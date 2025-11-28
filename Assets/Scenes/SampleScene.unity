@@ -476,6 +476,7 @@ MonoBehaviour:
   hitboxObject: {fileID: 1463510644}
   invulnerabilityTime: 0.3
   flashInterval: 0.1
+  deathZoneCollider: {fileID: 641356332}
 --- !u!114 &154062181
 MonoBehaviour:
   m_ObjectHideFlags: 0
