@@ -11,7 +11,7 @@ public class EnemyHealth : MonoBehaviour
     public GameObject hitboxObject;
     public float invulnerabilityTime = 1f; // 1 секунда неуязвимости
     public float flashInterval = 0.1f;      // мигание каждые 0.1 сек
-
+    public Collider2D deathZoneCollider;
     private bool isInvulnerable = false;
     private Rigidbody2D rb;
     private Animator anim;
@@ -96,5 +96,40 @@ public class EnemyHealth : MonoBehaviour
 
         sr.enabled = true; // вернуть спрайт
         isInvulnerable = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // если deathZoneCollider назначен и попали в него — мгновенный респаун
+        if (deathZoneCollider != null && other == deathZoneCollider)
+        {
+            InstantRespawn();
+        }
+    }
+
+    /// <summary>
+    /// Мгновенно телепортирует игрока на spawnPoint, обнуляет скорость и восстанавливает hp.
+    /// </summary>
+    public void InstantRespawn()
+    {
+        // остановим все текущие корутины (например, мигание/анимации)
+        StopAllCoroutines();
+
+        // вернуть положение
+        if (spawnPoint != null)
+        {
+            transform.position = spawnPoint.position;
+        }
+
+        // сброс физики
+        rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+        rb.gravityScale = defaultGravityScale;
+
+        // восстановление здоровья и состояний
+        // hp = maxHp;
+        isInvulnerable = false;
+        if (sr != null) sr.enabled = true;
+
     }
 }
