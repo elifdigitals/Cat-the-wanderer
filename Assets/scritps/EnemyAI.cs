@@ -96,7 +96,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (health != null && health.hp <= 0)
         {
-            rb.velocity = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
             return;
         }
 
@@ -106,7 +106,7 @@ public class EnemyAI : MonoBehaviour
                 PatrolStep();
                 break;
             case State.Idle:
-                rb.velocity = new Vector2(0f, rb.velocity.y);
+                rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
                 break;
             case State.Chase:
                 ChaseStep();
@@ -117,7 +117,7 @@ public class EnemyAI : MonoBehaviour
     void PatrolStep()
     {
         // движение
-        rb.velocity = new Vector2(direction * patrolSpeed, rb.velocity.y);
+        rb.linearVelocity = new Vector2(direction * patrolSpeed, rb.linearVelocity.y);
 
         // проверки
         bool noGroundAhead = !CheckGroundInDirection(direction);
@@ -145,7 +145,7 @@ public class EnemyAI : MonoBehaviour
         float dirToPlayer = player.position.x - transform.position.x;
         int chaseDir = dirToPlayer >= 0f ? 1 : -1;
 
-        rb.velocity = new Vector2(chaseDir * chaseSpeed, rb.velocity.y);
+        rb.linearVelocity = new Vector2(chaseDir * chaseSpeed, rb.linearVelocity.y);
 
         // если нужно сменить визуальное направление
         if (chaseDir != direction && Time.time - lastFlipTime >= flipCooldown)
