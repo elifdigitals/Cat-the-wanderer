@@ -10,6 +10,7 @@ public class CatControl : MonoBehaviour
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
     public float jumpAmount = 2;
+    public GameObject HitChild;
 
     [Header("Dash Settings")]
     public KeyCode dashKey = KeyCode.LeftShift;
@@ -92,6 +93,10 @@ public class CatControl : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             jumpsLeft--;
+        }
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            StartCoroutine(FlashOneFrame());
         }
 
         if (Input.GetKeyDown(dashKey))
@@ -245,5 +250,12 @@ public class CatControl : MonoBehaviour
         if (groundCheck == null) return;
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
+    }
+
+    IEnumerator FlashOneFrame()
+    {
+        HitChild.SetActive(true);   // включили
+        yield return new WaitForSeconds(0.1f);
+        HitChild.SetActive(false);  // выключили
     }
 }
