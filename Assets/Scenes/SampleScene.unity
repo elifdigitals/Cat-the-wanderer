@@ -727,9 +727,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23f147fec0aadfd4e876c76d988a9a32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
-  patrolSpeed: 2
-  chaseSpeed: 4
-  chaseRange: 5
+  patrolSpeed: 3
+  chaseSpeed: 7
+  chaseRange: 10
   player: {fileID: 55438523}
   groundLayer:
     serializedVersion: 2
